@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Китобхона</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="header-box">
+    <h1 class="title">
+        📚 <span class="school-library-title">Китобхонаи электронӣ</span>
+    </h1>
+
+    <!-- ===== ТУГМАҲОИ САФИ 1 ===== -->
+    <div class="menu-row">
+        <a href="/add_book" class="btn green">➕ Иловаи китоб</a>
+        <a href="/add_reader" class="btn blue">👤 Иловаи хонанда</a>
+    </div>
+
+    <!-- ===== ТУГМАҲОИ САФИ 2 ===== -->
+    <div class="menu-row">
+        <a href="/loan_book" class="btn orange">📘 Қарз додан</a>
+        <a href="/return_book" class="btn yellow">🔁 Баргардондан</a>
+        <a href="/loans" class="btn gray">📋 Рӯйхати китобҳо</a>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Рӯйхати китобҳо</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Ном</th>
+            <th>Муаллиф</th>
+            <th>Ҳамагӣ</th>
+            <th>Дастрас</th>
+            <th>Навъ</th>
+        </tr>
+
+        {% for b in books %}
+        <tr>
+            <td>{{ b[0] }}</td>
+            <td>{{ b[1] }}</td>
+            <td>{{ b[2] }}</td>
+            <td>{{ b[3] }}</td>
+            <td>{{ b[4] }}</td>
+            <td>{{ b[5] if b|length > 5 else "-" }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+</body>
+</html>
